@@ -23,7 +23,7 @@ def fetch_spacex_last_launch(url, name_folder, args_id):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='C какой по какую книги  скачать')
+    parser = argparse.ArgumentParser(description='C какого запуска скачать')
     parser.add_argument('--id', default='5eb87d42ffd86e000604b384')
     args_id = parser.parse_args()
     name_folder = "media"
