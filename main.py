@@ -27,9 +27,9 @@ def main():
         description='Программа запрашивает через какой промежуток времени нужно публиковать изображения в телегарм канал'
     )
     parser.add_argument(
-    '--publication_time',
-    type=int,
-    default=14440
+        '--publication_time',
+         type=int,
+         default=14440
     )
     args = parser.parse_args()
 
