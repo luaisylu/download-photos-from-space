@@ -7,7 +7,7 @@ import telegram
 from dotenv import load_dotenv
 
 
-def publish_media_in_telegram(telegram_token, channel_chat_id, args):
+def publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args):
     bot = telegram.Bot(token=telegram_token)
     images = sorted(os.listdir("media"))
     random.shuffle(images)
@@ -18,7 +18,7 @@ def publish_media_in_telegram(telegram_token, channel_chat_id, args):
             with open(image_path, 'rb') as file:
          
                 photo = file
-                bot.send_document(chat_id=channel_chat_id, document=photo)
+                bot.send_document(chat_id=telegram_channel_chat_id, document=photo)
             time.sleep(args.publication_time)
 
 
@@ -36,9 +36,9 @@ def main():
     load_dotenv()
 
     telegram_token = os.getenv("TG_TOKEN")
-    channel_chat_id = os.getenv("TELEGRAM_CHANNEL_CHAT_ID")
+    telegram_channel_chat_id = os.getenv("TELEGRAM_CHANNEL_CHAT_ID")
 
-    publish_media_in_telegram(telegram_token, channel_chat_id, args)
+    publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args)
 
 
 if __name__ == "__main__":
