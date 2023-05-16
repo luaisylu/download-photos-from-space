@@ -10,10 +10,10 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 ### Переменные окружения
-Для получения `CHANNEL_CHAT_ID` необходимо зайти в свой телеграм канал и найти ссылку. `TG_TOKEN` нужно получить у `@BotFather`. `NASA_KEY` нужно взять с сайта [api.nasa.gov](https://api.nasa.gov/).
+Для получения `TELEGRAM_CHANNEL_CHAT_ID` необходимо зайти в свой телеграм канал и найти ссылку. `TG_TOKEN` нужно получить у `@BotFather`. `NASA_KEY` нужно взять с сайта [api.nasa.gov](https://api.nasa.gov/).
 Для запуска необходимо создать файл `.env`. В нем хранятся переменные окружения для правильной работы кода. Пример содержимого файла `.env`:
 ```python
-CHANNEL_CHAT_ID="@publish_tg_idry"
+TELEGRAM_CHANNEL_CHAT_ID="@publish_tg_idry"
 TG_TOKEN="5805997756:AHLKyZhhl3m_C_SXMBhknKIt78YJ1I_16rg"
 NASA_KEY="uV02SJszkmrye1jcejjNbM61S7bs3Oc7fVU6QYt8"
 ```

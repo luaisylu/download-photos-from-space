@@ -36,7 +36,7 @@ def main():
     load_dotenv()
 
     telegram_token = os.getenv("TG_TOKEN")
-    channel_chat_id = os.getenv("CHANNEL_CHAT_ID")
+    channel_chat_id = os.getenv("TELEGRAM_CHANNEL_CHAT_ID")
 
     publish_media_in_telegram(telegram_token, channel_chat_id, args)
 
