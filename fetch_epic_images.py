@@ -9,7 +9,7 @@ from download_image import download_image
 from determine_file_extension import determine_file_extension
 
 
-def get_picture_EPIC(nasa_key, name_folder):
+def get_picture_epic(nasa_key, name_folder):
     url = "https://api.nasa.gov/EPIC/api/natural/images"
     params = {
       "api_key": nasa_key
@@ -33,7 +33,7 @@ def main():
     nasa_key = os.getenv("NASA_KEY")
     name_folder = "media"
     Path(name_folder).mkdir(parents=True, exist_ok=True)
-    get_picture_EPIC(nasa_key, name_folder)
+    get_picture_epic(nasa_key, name_folder)
   
 
 if __name__ == "__main__":
