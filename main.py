@@ -28,7 +28,8 @@ def main():
     )
     parser.add_argument(
         '--publication_time',
-         type=int,
+        type=int,
+        help='Частота публикации изображения',
          default=14440
     )
     args = parser.parse_args()

@@ -23,8 +23,11 @@ def fetch_spacex_last_launch(url, name_folder, args_id):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='C какого запуска скачать')
-    parser.add_argument('--id', default='5eb87d42ffd86e000604b384')
+    parser = argparse.ArgumentParser(description='Программа для скачиваний изображений космоса с сайта NASA')
+    parser.add_argument(
+        '--id', 
+        help='Указать свой id запуска для скачивания изображений',
+        default='5eb87d42ffd86e000604b384')
     args = parser.parse_args()
     name_folder = "media"
     Path(name_folder).mkdir(parents=True, exist_ok=True)
