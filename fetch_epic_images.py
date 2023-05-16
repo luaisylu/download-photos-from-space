@@ -16,11 +16,11 @@ def get_picture_epic(nasa_key, name_folder):
     }
     response = requests.get(url, params=params)
     response.raise_for_status()
-    images_nasa = response.json()
-    for number, image_nasa in enumerate(images_nasa):
-        date_publish = image_nasa['date']
+    nasa_images = response.json()
+    for number, image_nasa in enumerate(asa_images):
+        publish_date = image_nasa['date']
         image_name = image_nasa['image']
-        image_date_format = datetime.datetime.fromisoformat(date_publish).strftime('%Y/%m/%d')
+        image_date_format = datetime.datetime.fromisoformat(publish_date).strftime('%Y/%m/%d')
         image_url =   f"https://api.nasa.gov/EPIC/archive/natural/{image_date_format}/png/{image_name}.png"
         extension = determine_file_extension(image_url)
         filename = os.path.join(number, extension)
