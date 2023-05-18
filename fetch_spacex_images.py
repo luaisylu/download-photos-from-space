@@ -1,3 +1,4 @@
+import os.path
 import argparse
 from pathlib import Path
 
@@ -18,7 +19,7 @@ def fetch_spacex_last_launch(url, name_folder, args):
     link_the_images = image["links"]["flickr_images"]
   for images_number, link_image in enumerate(link_the_images):
         filename = f"spacex{images_number}.jpg"
-        file_path = f"{name_folder}/{filename}"
+        file_path = os.path.join(name_folder, filename)
         download_image(link_image, file_path)
 
 

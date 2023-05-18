@@ -24,8 +24,8 @@ PHOTOS_NUMBER, nasa_key, name_folder):
         if nasa_image["url"]:
             image_link = nasa_image["url"]
             extension = determine_file_extension(image_link)
-            filename = f"nasa{images_numbers}{extension}"
-            file_path = f"{name_folder}/{filename}"
+            filename = os.path.join(images_numbers, extension)
+            file_path = os.path.join(name_folder, filename)
             download_image(image_link, file_path)
 
 
