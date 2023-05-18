@@ -6,20 +6,20 @@ import requests
 from download_image import download_image
 
 
-def fetch_spacex_last_launch(url, name_folder, args_id):
+def fetch_spacex_last_launch(url, name_folder, args):
   params ={
-      "id": args_id
+      "id": args
   }
   response = requests.get(url, params=params)
   response.raise_for_status()
   images = response.json()
-  for image in images:
-      if image["links"]["flickr_images"]:
-          link_the_images = image["links"]["flickr_images"]
+  image = ''.join([image for image in images])
+  if image["links"]["flickr_images"]:
+    link_the_images = image["links"]["flickr_images"]
   for images_number, link_image in enumerate(link_the_images):
-    filename = f"spacex{images_number}.jpg"
-    file_path = f"{name_folder}/{filename}"
-    download_image(link_image, file_path)
+        filename = f"spacex{images_number}.jpg"
+        file_path = f"{name_folder}/{filename}"
+        download_image(link_image, file_path)
 
 
 def main():

@@ -30,7 +30,7 @@ def main():
         '--publication_time',
         type=int,
         help='Частота публикации изображения',
-         default=14440
+        default=14440
     )
     args = parser.parse_args()
 
