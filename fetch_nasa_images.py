@@ -18,12 +18,13 @@ def get_picture_nasa_day(photos_number, nasa_key, name_folder):
     response = requests.get(url, params=params)
     nasa_images = response.json()
     for images_numbers, nasa_image in enumerate(nasa_images):
-        if nasa_image["url"]:
-            image_link = nasa_image["url"]
-            extension = determine_file_extension(image_link)
-            filename = os.path.join(images_numbers, extension)
-            file_path = os.path.join(name_folder, filename)
-            download_image(image_link, file_path)
+        if not nasa_image["url"]:
+            continue
+        image_link = nasa_image["url"]
+        extension = determine_file_extension(image_link)
+        filename = os.path.join(images_numbers, extension)
+        file_path = os.path.join(name_folder, filename)
+        download_image(image_link, file_path)
 
 
 def main():
