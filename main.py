@@ -42,5 +42,5 @@ def main():
     publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
