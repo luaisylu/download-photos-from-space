@@ -9,18 +9,18 @@ from determine_file_extension import determine_file_extension
 
 
 def get_picture_nasa_day(photos_number, nasa_key, name_folder):
-    url = "https://api.nasa.gov/planetary/apod"
+    url = 'https://api.nasa.gov/planetary/apod'
     params = {
-      "count": PHOTOS_NUMBER,
-      "api_key": nasa_key
+      'count': photos_number,
+      'api_key': nasa_key
     }
   
     response = requests.get(url, params=params)
     nasa_images = response.json()
     for images_numbers, nasa_image in enumerate(nasa_images):
-        if not nasa_image["url"]:
+        if not nasa_image['url']:
             continue
-        image_link = nasa_image["url"]
+        image_link = nasa_image['url']
         extension = determine_file_extension(image_link)
         filename = os.path.join(images_numbers, extension)
         file_path = os.path.join(name_folder, filename)
@@ -29,13 +29,12 @@ def get_picture_nasa_day(photos_number, nasa_key, name_folder):
 
 def main():
     load_dotenv()
-    nasa_key = os.getenv("NASA_KEY")
-    name_folder = "media"
+    nasa_key = os.getenv('NASA_KEY')
+    name_folder = 'media'
     Path(name_folder).mkdir(parents=True, exist_ok=True)
-    PHOTOS_NUMBER
     photos_number = 30
     get_picture_nasa_day(photos_number, nasa_key, name_folder)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
