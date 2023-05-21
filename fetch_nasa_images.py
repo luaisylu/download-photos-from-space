@@ -7,11 +7,8 @@ from dotenv import load_dotenv
 from download_image import download_image
 from determine_file_extension import determine_file_extension
 
-PHOTOS_NUMBER = 30
 
-
-def get_picture_nasa_day(
-PHOTOS_NUMBER, nasa_key, name_folder):
+def get_picture_nasa_day(photos_number, nasa_key, name_folder):
     url = "https://api.nasa.gov/planetary/apod"
     params = {
       "count": PHOTOS_NUMBER,
@@ -34,7 +31,9 @@ def main():
     nasa_key = os.getenv("NASA_KEY")
     name_folder = "media"
     Path(name_folder).mkdir(parents=True, exist_ok=True)
-    get_picture_nasa_day(PHOTOS_NUMBER, nasa_key, name_folder)
+    PHOTOS_NUMBER
+    photos_number = 30
+    get_picture_nasa_day(photos_number, nasa_key, name_folder)
 
 
 if __name__ == "__main__":
