@@ -7,10 +7,9 @@ import requests
 from download_image import download_image
 
 
-def fetch_spacex_last_launch(url, name_folder, args):
-  params ={
-      'id': args
-  }
+def fetch_spacex_last_launch(url):
+  name_folder = 'media'
+  Path(name_folder).mkdir(parents=True, exist_ok=True)
   response = requests.get(url, params=params)
   response.raise_for_status()
   images = response.json()
@@ -30,10 +29,8 @@ def main():
         help='Указать свой id запуска для скачивания изображений',
         default='5eb87d42ffd86e000604b384')
     args = parser.parse_args()
-    name_folder = 'media'
-    Path(name_folder).mkdir(parents=True, exist_ok=True)
-    url = 'https://api.spacexdata.com/v3/launches/'
-    fetch_spacex_last_launch(url, name_folder, args)
+    url = f'https://api.spacexdata.com/v3/launches/{args}'
+    fetch_spacex_last_launch(url)
     
     
 if __name__ == '__main__':
