@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 def publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args):
     bot = telegram.Bot(token=telegram_token)
-    images = sorted(os.listdir("media"))
+    images = sorted(os.listdir('media'))
     random.shuffle(images)
     while True:
         random.shuffle(images)
@@ -36,8 +36,8 @@ def main():
 
     load_dotenv()
 
-    telegram_token = os.getenv("TG_TOKEN")
-    telegram_channel_chat_id = os.getenv("TELEGRAM_CHANNEL_CHAT_ID")
+    telegram_token = os.getenv('TG_TOKEN')
+    telegram_channel_chat_id = os.getenv('TELEGRAM_CHANNEL_CHAT_ID')
 
     publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args)
 
