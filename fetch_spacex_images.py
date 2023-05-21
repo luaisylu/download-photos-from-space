@@ -36,5 +36,5 @@ def main():
     fetch_spacex_last_launch(url, name_folder, args)
     
     
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
