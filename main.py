@@ -17,8 +17,7 @@ def publish_media_in_telegram(telegram_token, telegram_channel_chat_id, args):
             image_path = os.path.join('media', image)
             with open(image_path, 'rb') as file:
          
-                photo = file
-                bot.send_document(chat_id=telegram_channel_chat_id, document=photo)
+                bot.send_document(chat_id=telegram_channel_chat_id, document=file)
             time.sleep(args.publication_time)
 
 
