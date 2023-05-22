@@ -33,7 +33,7 @@ def main():
     nasa_key = os.getenv('NASA_KEY')
     name_folder = 'media'
     Path(name_folder).mkdir(parents=True, exist_ok=True)
-    get_picture_epic(nasa_key, name_folder)
+    get_pictures_epic(nasa_key, name_folder)
   
 
 if __name__ == '__main__':
