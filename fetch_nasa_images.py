@@ -8,7 +8,7 @@ from download_image import download_image
 from determine_file_extension import determine_file_extension
 
 
-def get_picture_nasa_day(photos_number, nasa_key, name_folder):
+def get_pictures_nasa_day(photos_number, nasa_key, name_folder):
     url = 'https://api.nasa.gov/planetary/apod'
     params = {
       'count': photos_number,
@@ -33,7 +33,7 @@ def main():
     name_folder = 'media'
     Path(name_folder).mkdir(parents=True, exist_ok=True)
     photos_number = 30
-    get_picture_nasa_day(photos_number, nasa_key, name_folder)
+    get_pictures_nasa_day(photos_number, nasa_key, name_folder)
 
 
 if __name__ == '__main__':
