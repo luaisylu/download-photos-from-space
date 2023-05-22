@@ -28,9 +28,7 @@ def main():
         help='Указать свой id запуска для скачивания изображений',
         default='5eb87d42ffd86e000604b384')
     args = parser.parse_args()
-    print(args.id)
     url = f'https://api.spacexdata.com/v3/launches/{args.id}'
-    print(url)
     fetch_spacex_last_launch(url)
     
     
